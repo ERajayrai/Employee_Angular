@@ -57,4 +57,19 @@
    
   </nz-table>
 <div> 
-  
+  <div style="margin-left: 1px;margin-top: px;color: rgb(32, 22, 85);border: rgb(192, 85, 169);">
+    <nz-form-label [nzSpan]="7" nzRequired>DeleteEmployee</nz-form-label>
+    <button style="color: crimson;background-color: darkturquoise;border: double;" (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin" >
+      {{isOpen ? "Close" : "Delete"}}
+    </button>
+    <ng-template
+      cdkConnectedOverlay
+      [cdkConnectedOverlayOrigin]="trigger"
+      [cdkConnectedOverlayOpen]="isOpen"
+    >
+      <ul class="example-list">
+        <li><input type="text" [(ngModel)]="deletReq.id" placeholder="Enter the Employee id" style="border-radius: 20p;"></li>
+        <li><BUtton type="submit" (click)="getDelete()">Delete</BUtton></li>
+      </ul>
+    </ng-template>
+  </div>  

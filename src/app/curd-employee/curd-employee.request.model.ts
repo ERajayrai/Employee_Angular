@@ -23,3 +23,6 @@ export class Details{
 
 
 }
+export class DeletRequest{
+   id='';
+}

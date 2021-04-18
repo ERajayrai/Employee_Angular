@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { SearchRequest } from './curd-employee.request.model';
+import { DeletRequest, SearchRequest } from './curd-employee.request.model';
 
 @Component({
   selector: 'app-curd-employee',
@@ -11,12 +11,14 @@ export class CurdEmployeeComponent implements OnInit {
  public listOfData:any
   public searchReq : SearchRequest=new SearchRequest()
   public search: any =[];
-  
+  public deletReq:DeletRequest=new DeletRequest()
+  isOpen =false
 
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
+  
   getIt(){
     console.log(this.searchReq.q)
     
@@ -36,6 +38,14 @@ export class CurdEmployeeComponent implements OnInit {
       }
       
     });
+  }
+  getDelete(){
+    const headers = { 'security-key': 'abcd' };
+    this.http.delete('http://localhost:9090/employee/delete/'+this.deletReq.id,{headers}).subscribe(data=>{
+      console.log(data)
+    })
+     
+
   }
 
 }
