@@ -48,11 +48,7 @@ export class EmployeesComponent implements OnInit {
       //111111console.log(value);
       console.log(this.validateForm.value);
   }
-  resetForm(){
-
-    this.validateForm.reset();
-  }
-      
+  
 
     
     
