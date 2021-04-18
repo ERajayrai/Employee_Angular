@@ -1,0 +1,60 @@
+
+<div style="text-align: center; margin-top: 5%;" >
+    <nz-input-group nzSearch style="width: 50%;" nzSize="large" [nzAddOnAfter]="suffixButton">
+        <input type="text"  nz-input placeholder="input search text" [(ngModel)]="searchReq.q" />
+    </nz-input-group>
+
+    <ng-template #suffixButton>
+    <button nz-button nzType="primary" nzSize="large" (click)="getIt()" nzSearch>Search</button>
+    </ng-template>
+</div>
+<br>
+<div>
+ <nz-table #basicTable [nzData]="listOfData" >
+    <thead style="border: double; width: 0px;height: 0px;">
+      <tr>
+        <th style="width: 0px; height: 0px;">EmployeeId</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Gender</th>
+        <th>Status</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>DateOfBirth</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>ReportingManager</th>
+        <th>BloodGroup</th>
+        <th>Address</th>
+        <th>Pincode</th>
+      </tr>
+    </thead>
+    <tbody  >
+      <tr *ngFor="let data of search">
+        <td style="background-color: rgb(237, 100, 219);">{{data.id }}</td>
+        <td style="background-color: rgb(237, 100, 219);">{{ data.firstName}}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.lastName }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.gender }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.status }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.startDate }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.endDate }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.dob }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.department }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.designation}}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.reportingManager}}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.bloodGroup }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.address }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.pincode }}</td>
+        <td>
+          <a>Update</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>
+          </a>
+        </td>
+      </tr>
+    
+    </tbody>
+   
+  </nz-table>
+<div> 
+  

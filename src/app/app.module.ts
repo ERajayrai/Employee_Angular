@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgZorroAntdModule } from './ng-zorro-antd.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CurdEmployeeComponent } from './curd-employee/curd-employee.component';
+
 
 registerLocaleData(en);
 
@@ -22,7 +24,8 @@ registerLocaleData(en);
     AppComponent,
     EmployeesComponent,
     DependantsComponent,
-    EducationsComponent
+    EducationsComponent,
+    CurdEmployeeComponent,
   ],
   imports: [
     BrowserModule,
