@@ -1,5 +1,9 @@
 # Employee
 
+A Demo Angular application with Frontend operations for employee management
+Components Used:
+-Angular
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
 
 ## Development server
