@@ -42,11 +42,12 @@ export class EmployeesComponent implements OnInit {
       this.validateForm.controls[key].updateValueAndValidity();
     }
   
-    //let url="http://localhost:9095/add-user";
+      let url="http://localhost:9090/employee/add";
 
-     // this.http.post<any>(url,value).subscribe(data=>{
-      //111111console.log(value);
-      console.log(this.validateForm.value);
+     this.http.post<any>(url,value).subscribe(data=>{
+      console.log(data);
+     })
+      
   }
   
 
