@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dependants.component.css']
 })
 export class DependantsComponent implements OnInit {
-
+  isLoadingF=false
   constructor(private http: HttpClient,private router:Router,private fb: FormBuilder) { 
 
 
@@ -44,6 +44,9 @@ export class DependantsComponent implements OnInit {
       console.log(value)
      })
       
+  }
+  loadF(){
+    this.router.navigate(['/depandantsSearch'])
   }
 
 }

@@ -60,6 +60,12 @@ export class EducationsComponent implements OnInit {
     this.router.navigate(['/dependants'])
 
   }
+  isLoadingf=false
+  loadf(){
+    this.router.navigate(['/EducationSearch'])
+
+
+  }
   
 
 }
