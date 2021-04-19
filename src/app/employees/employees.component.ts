@@ -10,6 +10,8 @@ import { Observable, Observer } from 'rxjs';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
+  isLoadingOne=false
+  isLoadingTwo=false
   data: any;
   constructor(private http: HttpClient,private router:Router,private fb: FormBuilder ) { 
     this.validateForm = this.fb.group({
@@ -48,6 +50,23 @@ export class EmployeesComponent implements OnInit {
       console.log(data);
      })
       
+  }
+  loadOne():void{
+
+    
+    this.isLoadingOne = true;
+    setTimeout(() => {
+      this.isLoadingOne = false;
+    }, 5000);
+  
+    this.router.navigate(['educations'])
+
+  }
+  loadTwo(){
+    
+
+    this.router.navigate(['/search'])
+
   }
   
 

@@ -1,5 +1,5 @@
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)" style="margin-top: 5%; margin-left: 20%;margin-right: 20%;border-radius: 20px; background-color: rgb(222, 135, 200); border: double;">
-    <div style="text-align: center;"><nz-avatar nzSize="large" nzIcon="user-add" style="background-color: rgb(255, 220, 229); width: 100px;height: 100px;background-image: -webkit-repeating-linear-gradient();" ></nz-avatar></div>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)" style=" margin-left: 20%;margin-right: 20%;border-radius: 20px; background-color: rgb(222, 135, 200); border: double;">
+  <div ><i nz-icon nzType="user-add" nzTheme="outline"></i></div>
   <nz-form-item style="margin-top:10px">
     <nz-form-label [nzSpan]="7" nzRequired>Id</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
@@ -45,7 +45,7 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>Institution</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
-      <input nz-input formControlName="institution " placeholder="Enter your Institution Name, " />
+      <input nz-input formControlName="institution" placeholder="Enter your Institution Name, " />
       <ng-template #userErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">
           Please input your Institution Name!
@@ -87,7 +87,7 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>EndDate</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
-      <input nz-input type="date" formControlName="EndDate" placeholder="Enddate" />
+      <input nz-input type="date" formControlName="endDate" placeholder="Enddate" />
       <ng-template #userErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">
           Please input your EndDate!
@@ -101,7 +101,7 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>Adress</nz-form-label>
     <nz-form-control [nzSpan]="12" nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
-      <input nz-input type="taxt" formControlName="adress" placeholder="Enter Full Adress" />
+      <input nz-input type="taxt" formControlName="adress" placeholder="Enter Full Address" />
       <ng-template #userErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">
           Please input your Adress!
@@ -114,8 +114,11 @@
   </nz-form-item>
   <nz-form-item>
     <nz-form-control [nzOffset]="7" [nzSpan]="12">
-      <button nz-button nzType="primary" [disabled]="!validateForm.valid" >Submit</button>
+      <button nz-button nzType="primary" >Submit</button>
+      <button nz-button nzType="primary" (click)="loadThree()" [nzLoading]="isLoadingThree" style="margin-left:5px ;">Dependants!</button>
     </nz-form-control>
   </nz-form-item>
 </form>
+
+
 

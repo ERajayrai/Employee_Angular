@@ -20,7 +20,7 @@ export class DependantsComponent implements OnInit {
       employeeId: ['', [Validators.required]],
       dob: ['',[Validators.required]],
       gender: ['',[Validators.required]],
-      relactionShip: ['',[Validators.required]],
+      relationShip: ['',[Validators.required]],
      
     });
 
@@ -36,11 +36,12 @@ export class DependantsComponent implements OnInit {
       this.validateForm.controls[key].markAsDirty();
       this.validateForm.controls[key].updateValueAndValidity();
     }
-  
-      let url="http://localhost:9090/dependants/add";
+    const headers = { 'security-key':'abcd' };
+     
 
-     this.http.post<any>(url,value).subscribe(data=>{
+     this.http.post<any>('http://localhost:9090/dependants/add',value,{ headers }).subscribe(data=>{
       console.log(data);
+      console.log(value)
      })
       
   }

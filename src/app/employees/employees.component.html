@@ -190,7 +190,11 @@
   <nz-form-item>
     <nz-form-control [nzOffset]="7" [nzSpan]="12">
       <button nz-button nzType="primary" [disabled]="!validateForm.valid" >Submit</button>
+      
+      <button nz-button nzType="primary" (click)="loadOne()" [nzLoading]="isLoadingOne" style="margin-left: 5px;">EducationQualification!</button>
+      <button nz-button nzType="primary" (click)="loadTwo()" [nzLoading]="isLoadingTwo" style="margin-left: 5px;">Delet/Search</button>
     </nz-form-control>
   </nz-form-item>
 </form>
+
 

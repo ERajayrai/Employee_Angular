@@ -1,0 +1,57 @@
+<p>curd-education works!</p>
+<div style="text-align: center; margin-top: 5%;" >
+    <nz-input-group nzSearch style="width: 50%;" nzSize="large" [nzAddOnAfter]="suffixButton">
+        <input type="text"  nz-input placeholder="Enter EmployeeID" [(ngModel)]="employeeId" />
+    </nz-input-group>
+
+    <ng-template #suffixButton>
+    <button nz-button nzType="primary" nzSize="large" (click)="getIt()" nzSearch>Search</button>
+    </ng-template>
+</div>
+<br>
+<div>
+ <nz-table #basicTable [nzData]="listOfData" >
+    <thead style="border: double; width: 0px;height: 0px;">
+      <tr>
+        <th>EmployeeId</th>
+        <th>Cource Type</th>
+        <th>Streem</th>
+        <th>InstitutionName</th>
+        <th> Percentage</th>
+        <th>StartDate</th>
+        <th>EndDate</th>
+        <th>FullAdress</th>
+      </tr>
+    </thead>
+    <tbody  >
+      <tr *ngFor="let data of search">
+        <td style="background-color: rgb(237, 100, 219);">{{data.id }}</td>
+        <td style="background-color: rgb(237, 100, 219);">{{ data.type}}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.ntype }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.institution }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.percentage }}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.startDate}}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.endDate}}</td>
+        <td style="background-color: rgb(237, 100, 219); color:green;">{{ data.adress}}</td>
+      </tr>
+    
+    </tbody>
+   
+  </nz-table>
+<div> 
+  <div style="margin-left: 1px;margin-top: px;color: rgb(32, 22, 85);border: rgb(192, 85, 169);">
+    <nz-form-label [nzSpan]="7" nzRequired>DeleteEducations</nz-form-label>
+    <button style="color: crimson;background-color: darkturquoise;border: double;" (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin" >
+      {{isOpen ? "Close" : "Delete"}}
+    </button>
+    <ng-template
+      cdkConnectedOverlay
+      [cdkConnectedOverlayOrigin]="trigger"
+      [cdkConnectedOverlayOpen]="isOpen"
+    >
+      <ul class="example-list">
+        <li><input type="text" [(ngModel)]="employeeId" placeholder="Enter the Employee id" style="border-radius: 20p;"></li>
+        <li><BUtton type="submit" (click)="getDelete()">Delete</BUtton></li>
+      </ul>
+    </ng-template>
+  </div>  
